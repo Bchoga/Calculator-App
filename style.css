@@ -1,0 +1,239 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', Arial, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(222, 26%, 31%);
+}
+
+main {
+    max-width: 500px;
+    min-width: 300px;
+    min-height: 600px;
+    background: transparent;
+}
+
+.nameAndThemeArea {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.appName {
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 24px;
+    color: hsl(0, 0%, 100%);
+}
+
+.themeItemsWraper {
+    display: flex;
+}
+
+.themeNumbers {
+    width: 70px;
+    display: flex;
+    padding-left: 8px;
+    padding-right: 8px;
+    justify-content: space-between;
+    color: hsl(0, 0%, 100%);
+}
+
+.themeSwitch {
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+    /* to be controlled by selected theme */
+    background: hsl(223, 31%, 20%);
+    border-radius: 12px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.themeSwitchAndLabel {
+    width: 100%;
+    position: relative;
+}
+
+label[for="themeSwitch"] {
+    position: absolute;
+    font-size: 10px;
+    font-weight: 600;
+    right: 90px;
+    top: 25px;
+    color: hsl(0, 0%, 100%);
+}
+
+/* hide the default btn */
+.radioBtn {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.customRadio {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: hsl(223, 31%, 20%);
+    /* switch background */
+    border-radius: 50%;
+}
+
+.radioBtn:checked+.checkmark {
+    background: hsl(6, 63%, 50%);
+    transition: all ease-out 500ms;
+}
+
+/************************* OUTPUT AREA **************************/
+.outputArea {
+    display: flex;
+    width: 100%;
+    height: 120px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: hsl(224, 36%, 15%);
+}
+
+#output {
+    resize: none;
+    background-color: transparent;
+    text-align: right;
+    line-height: 120px;
+    border: none;
+    outline: none;
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-right: 18px;
+}
+
+/* blinking cursor */
+.outputWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.blinking-cursor {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 60%;
+    background: white;
+    animation: blink 1s steps(1) infinite;
+    pointer-events: none;
+}
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/*********************************** INPUT AREA ***********************************/
+.inputArea {
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+    background: hsl(223, 31%, 20%);
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.smallButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.bigButtons {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+button {
+    border-radius: 8px;
+    border: none;
+    font-size: 32px;
+    height: 55px;
+    font-weight: 800;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.normalBtn {
+    color: hsl(221, 14%, 31%);
+    background: hsl(30, 25%, 89%);
+    box-shadow: 0px 4px 0px 0px hsl(28, 16%, 65%);
+}
+
+.normalBtn:hover {
+    background: hsl(0, 0%, 100%);
+}
+
+.specialBtn {
+    background: hsl(225, 21%, 49%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0px 4px 0px 0px hsl(224, 28%, 35%);
+    font-size: 24px;
+}
+
+.specialBtn:hover {
+    background: hsl(225, 48%, 65%);
+}
+
+.equalsBtn {
+    background: hsl(6, 63%, 50%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0px 4px 0px 0px hsl(6, 70%, 34%);
+    font-size: 24px;
+}
+
+.equalsBtn:hover {
+    background: hsl(6, 100%, 60%);
+}
+
+@media (max-width: 800px) {
+    .inputArea {
+        padding: 15px;
+    }
+
+    .smallButtons {
+        gap: 15px;
+    }
+
+    .bigButtons {
+        gap: 15px;
+        margin-top: 15px;
+    }
+}

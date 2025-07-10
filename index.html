@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <link rel="icon" href="assets/favicon-32x32.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <main>
+        <!-- Row 1 name and theme switcher -->
+        <div class="nameAndThemeArea" id="nameAndThemeArea">
+            <label for="themeSwitch">THEME</label>
+            <span class="appName" id="appName">calc</span>
+            <span class="themeItemsWraper" id="themeItemsWraper">
+                <span class="themeSwitchWrapper" id="themeSwitchWrapper">
+                    <div class="themeNumbers" id="themeNumbers">
+                        <p class="themeNumber">1</p>
+                        <p class="themeNumber">2</p>
+                        <p class="themeNumber">3</p>
+                    </div>
+                    <div class="themeSwitchAndLabel">
+                        <div class="themeSwitch" id="themeSwitch">
+
+                            <label class="customRadio">
+                                <input type="radio" class="radioBtn" id="theme1Btn" name="theme" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label class="customRadio">
+                                <input type="radio" class="radioBtn" id="theme2Btn" name="theme">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label class="customRadio">
+                                <input type="radio" class="radioBtn" id="theme3Btn" name="theme">
+                                <span class="checkmark"></span>
+                            </label>
+
+                        </div>
+                    </div>
+
+                </span>
+            </span>
+        </div>
+
+        <!-- Output Area -->
+        <div class="outputArea" id="outputArea">
+            <div class="outputWrapper" id="outputWrapper">
+                <textarea name="output" id="output" readonly></textarea>
+                <span class="blinking-cursor"></span>
+            </div>
+
+        </div>
+
+        <!-- Input Area -->
+        <div class="inputArea">
+
+            <div class="smallButtons" id="inputBtns">
+                <button class="normalBtn value" id="7">7</button>
+                <button class="normalBtn value" id="8">8</button>
+                <button class="normalBtn value" id="9">9</button>
+                <button class="specialBtn" id="DEL">DEL</button>
+                <button class="normalBtn value" id="4">4</button>
+                <button class="normalBtn value" id="5">5</button>
+                <button class="normalBtn value" id="6">6</button>
+                <button class="normalBtn operator" id="+">+</button>
+                <button class="normalBtn value" id="1">1</button>
+                <button class="normalBtn value" id="2">2</button>
+                <button class="normalBtn value" id="3">3</button>
+                <button class="normalBtn operator" id="-">-</button>
+                <button class="normalBtn value" id=".">.</button>
+                <button class="normalBtn value" id="0">0</button>
+                <button class="normalBtn operator" id="/">/</button>
+                <button class="normalBtn operator" id="x">x</button>
+            </div>
+
+            <div class="bigButtons" id="outputBtns">
+                <button class="specialBtn" id="RESET">RESET</button>
+                <button class="equalsBtn" id="=">=</button>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>
