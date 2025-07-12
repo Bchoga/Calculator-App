@@ -6,6 +6,7 @@
 }
 
 body {
+    transition: all ease-out 500ms;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -222,6 +223,147 @@ button {
 .equalsBtn:hover {
     background: hsl(6, 100%, 60%);
 }
+
+/* THEME 2 */
+body.theme2{
+    background: hsl(0, 0%, 90%);
+    transition: all ease-out 500ms;
+}
+body.theme2 .appName{
+    color: hsl(60, 10%, 19%);
+}
+body.theme2 .themeNumbers{
+    color: hsl(60, 10%, 19%);
+}
+body.theme2 .themeSwitch{
+    background: hsl(0, 5%, 81%);
+}
+body.theme2 label[for="themeSwitch"] {
+    color: hsl(60, 10%, 19%);
+}
+body.theme2 .checkmark {
+    background: hsl(0, 5%, 81%);
+}
+
+body.theme2 .radioBtn:checked+.checkmark {
+    background: hsl(25, 98%, 40%);
+}
+
+body.theme2 .outputArea{
+    background: hsl(0, 0%, 93%);
+}
+body.theme2 #output{
+    color: hsl(60, 10%, 19%);
+}
+body.theme2 .blinking-cursor{
+    background: hsl(60, 10%, 19%);
+}
+body.theme2 .inputArea{
+    background: hsl(0, 5%, 81%);
+}
+
+body.theme2 .normalBtn{
+    color: hsl(60, 10%, 19%);
+    background: hsl(45, 7%, 89%);
+    box-shadow:  0px 4px 0px 0px hsl(35, 11%, 61%);
+}
+
+body.theme2 .normalBtn:hover {
+    background: hsl(0, 0%, 100%);
+}
+
+body.theme2 .specialBtn {
+    background: hsl(185, 42%, 37%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0px 4px 0px 0px hsl(185, 58%, 25%);
+    font-size: 24px;
+}
+
+body.theme2 .specialBtn:hover {
+    background: hsl(185, 34%, 53%);
+}
+
+body.theme2 .equalsBtn {
+    background:hsl(25, 98%, 40%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0px 4px 0px 0px hsl(25, 99%, 27%);
+    font-size: 24px;
+}
+
+body.theme2 .equalsBtn:hover {
+    background: hsl(6, 100%, 60%);
+}
+
+/* THEME 3 */
+body.theme3{
+    background: hsl(268, 75%, 9%);
+    transition: all ease-out 500ms;
+}
+body.theme3 .appName{
+    color: hsl(52, 100%, 62%);
+}
+body.theme3 .themeNumbers{
+    color: hsl(52, 100%, 62%);
+}
+body.theme3 .themeSwitch{
+    background: hsl(268, 71%, 12%);
+}
+body.theme3 label[for="themeSwitch"] {
+    color: hsl(52, 100%, 62%);
+}
+body.theme3 .checkmark {
+    background: hsl(268, 71%, 12%);
+}
+
+body.theme3 .radioBtn:checked+.checkmark {
+    background: hsl(176, 100%, 44%);
+}
+
+body.theme3 .outputArea{
+    background: hsl(268, 71%, 12%);
+}
+body.theme3 #output{
+    color: hsl(52, 100%, 62%);
+}
+body.theme3 .blinking-cursor{
+    background: hsl(52, 100%, 62%);
+}
+body.theme3 .inputArea{
+    background: hsl(268, 71%, 12%);
+}
+
+body.theme3 .normalBtn{
+    color: hsl(52, 100%, 62%);
+    background: hsl(268, 47%, 21%);
+    box-shadow:  0px 4px 0px 0px hsl(281, 89%, 26%);
+}
+
+body.theme3 .normalBtn:hover {
+    background: hwb(276 2% 29%);
+}
+
+body.theme3 .specialBtn {
+    background: hsl(281, 89%, 26%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0px 4px 0px 0px hsl(285, 91%, 52%);
+    font-size: 24px;
+}
+
+body.theme3 .specialBtn:hover {
+    background: hsl(285, 91%, 52%);
+}
+
+body.theme3 .equalsBtn {
+    background:hsl(176, 100%, 44%);
+    color: hsl(198, 20%, 13%);
+    box-shadow: 0px 4px 0px 0px hsl(177, 92%, 70%);
+    font-size: 24px;
+}
+
+body.theme3 .equalsBtn:hover {
+    background: hwb(176 33% 0%);
+}
+
 
 @media (max-width: 800px) {
     .inputArea {

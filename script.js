@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputBtns = document.getElementById('inputBtns');
     const outputBtns = document.getElementById('outputBtns');
     const outputWrapper = document.getElementById('outputWrapper');
-    
     const blinker = outputWrapper.getElementsByTagName('span')[0];
+    const themeSwitch = document.getElementById('themeSwitch');
 
     //add eventListeners to calculator elements
     // We dont need event listener on the screen
@@ -15,12 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let inputValArray = [];
     let tempResult = 0;
     let finalResult = 0;
-    let prevOperator = null;
     let clearScreenOnNextInput = false;
 
     inputBtns.addEventListener('click', (event) => {
 
-        if(!blinker.classList.contains('blinking-cursor')){
+        if (!blinker.classList.contains('blinking-cursor')) {
             blinker.classList.add('blinking-cursor');
         }
 
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (clearScreenOnNextInput) {
                 screen.value = "";
-                clearScreenOnNextInput=false;
+                clearScreenOnNextInput = false;
             }
             if (event.target.id === 'DEL') {
                 inputValArray.pop();
@@ -59,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function evaluate() {
         let processedArray = processInput();
-        if(!processedArray){
+        if (!processedArray) {
             return;
         }
         const processedArraySize = processedArray.length;
@@ -68,26 +67,26 @@ document.addEventListener('DOMContentLoaded', () => {
         while (index < processedArraySize - 1) {
             let operatorList = "x/+-";
             let currentValue = processedArray[index];
-            if(operatorList.includes(currentValue)){
+            if (operatorList.includes(currentValue)) {
                 //multiplication
-                if(currentValue === 'x'){
+                if (currentValue === 'x') {
                     //multiply tempResult with the next value
-                    tempResult = tempResult * processedArray[index+1];
+                    tempResult = tempResult * processedArray[index + 1];
                 }
                 //division
-                else if(currentValue === '/'){
+                else if (currentValue === '/') {
                     //divide tempResult with the next value
-                    tempResult = tempResult / processedArray[index+1];
+                    tempResult = tempResult / processedArray[index + 1];
                 }
                 //addition
-                else if(currentValue === '+'){
+                else if (currentValue === '+') {
                     //add tempResult with the next value
-                    tempResult = tempResult + processedArray[index+1];
+                    tempResult = tempResult + processedArray[index + 1];
                 }
                 //subtraction
-                else if(currentValue === '-'){
+                else if (currentValue === '-') {
                     //subtract next value from tempResult
-                    tempResult = tempResult - processedArray[index+1];
+                    tempResult = tempResult - processedArray[index + 1];
                 }
             }
             index++;
@@ -99,11 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
         clearScreenOnNextInput = true;
     }
 
-    function processInput(){
+    function processInput() {
         let processedArray = [];
         const inputArraySize = inputValArray.length;
         //empty input
-         if(inputArraySize===0){
+        if (inputArraySize === 0) {
             return false;
         }
         //invalid input
@@ -117,17 +116,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         //check if first character is a sign
         let firstNumisNegative = false;
-        if('+-'.includes(inputValArray[0])){
-            if(inputValArray[0] === '-'){
+        if ('+-'.includes(inputValArray[0])) {
+            if (inputValArray[0] === '-') {
                 firstNumisNegative = true;
             }
             inputValArray.shift();
         }
         //split numbers using operators
         let currentNum = [];
-        for(let index = 0; index < inputArraySize; index++){
-            if('x/+-'.includes(inputValArray[index])){
-                if(currentNum.length > 0){
+        for (let index = 0; index < inputArraySize; index++) {
+            if ('x/+-'.includes(inputValArray[index])) {
+                if (currentNum.length > 0) {
                     //push num
                     processedArray.push(parseFloat(currentNum.join('')));
                     //push operator
@@ -136,16 +135,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 //clear current num for next num
                 currentNum.length = 0;
             }
-            else{
+            else {
                 currentNum.push(inputValArray[index]);
             }
         }
         // push the last num
-        if(currentNum.length > 0){
+        if (currentNum.length > 0) {
             processedArray.push(parseFloat(currentNum.join('')));
         }
 
-        if(firstNumisNegative){
+        if (firstNumisNegative) {
             processedArray[0] *= -1;
         }
         return processedArray;
@@ -157,5 +156,34 @@ document.addEventListener('DOMContentLoaded', () => {
         tempResult = 0;
         prevOperator = null;
     }
+
+    themeSwitch.addEventListener('click', (event) => {
+        const theme1Btn = document.getElementById('theme1Btn');
+        const theme2Btn = document.getElementById('theme2Btn');
+        const theme3Btn = document.getElementById('theme3Btn');
+
+        if (theme1Btn.checked) {
+            // apply theme 1
+            document.body.classList.remove('theme1');
+            document.body.classList.remove('theme2');
+            document.body.classList.remove('theme3');
+            document.body.classList.add('theme1');
+
+        }
+        else if (theme2Btn.checked) {
+            // apply theme 2
+            document.body.classList.remove('theme1');
+            document.body.classList.remove('theme2');
+            document.body.classList.remove('theme3');
+            document.body.classList.add('theme2');
+        }
+        else if (theme3Btn.checked) {
+            // apply theme 3
+            document.body.classList.remove('theme1');
+            document.body.classList.remove('theme2');
+            document.body.classList.remove('theme3');
+            document.body.classList.add('theme3');
+        }
+    })
 
 });
